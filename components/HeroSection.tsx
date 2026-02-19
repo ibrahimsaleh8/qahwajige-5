@@ -48,7 +48,7 @@ export default function HeroSection({
               href={`https://wa.me/${
                 whatsApp?.includes("+") ? whatsApp.replace("+", "") : whatsApp
               }`}
-              className="bg-main-color px-8 py-4 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-main-color/50 transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+              className="bg-green-700 px-8 py-4 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-main-color/50 transition-all duration-300 hover:scale-105 w-full sm:w-auto">
               اطلب الخدمة الآن
             </a>
             <a

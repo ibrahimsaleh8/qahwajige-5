@@ -68,7 +68,7 @@ export function Header({
               <a
                 target="_blank"
                 href={`tel:${telephone}`}
-                className="bg-main-color hover:opacity-75 text-white md:px-6 md:py-3 px-4 py-2 text-sm md:text-base rounded-lg shadow-[0_4px_20px_hsl(var(--shadow-gold))] transition-all">
+                className="bg-green-700 hover:opacity-75 text-white md:px-6 md:py-3 px-4 py-2 text-sm md:text-base rounded-lg shadow-[0_4px_20px_hsl(var(--shadow-gold))] transition-all">
                 احجز الآن
               </a>
             </div>

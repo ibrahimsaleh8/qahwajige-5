@@ -47,9 +47,9 @@ export default function ServicesSection({
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-main-color mb-4 text-center">
+                  <p className="text-2xl font-bold text-main-color mb-4 text-center">
                     {service.title}
-                  </h3>
+                  </p>
 
                   {/* Description */}
                   <p className="text-low-color text-center leading-relaxed">

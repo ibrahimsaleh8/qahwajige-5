@@ -36,7 +36,7 @@ export default function ContactSection({
                     <Phone className="w-6 h-6 text-main-color" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-black font-semibold mb-2">الهاتف</h4>
+                    <p className="text-black font-semibold mb-2">الهاتف</p>
                     <a
                       href={`tel:${phone}`}
                       target="_blank"
@@ -55,7 +55,7 @@ export default function ContactSection({
                     <MessageCircle className="w-6 h-6 text-main-color" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold mb-2">واتساب</h4>
+                    <p className="font-semibold mb-2">واتساب</p>
                     <a
                       href={`https://wa.me/${
                         whatsapp.includes("+")
@@ -78,7 +78,7 @@ export default function ContactSection({
                     <Mail className="w-6 h-6 text-main-color" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold mb-2">البريد الإلكتروني</h4>
+                    <p className="font-semibold mb-2">البريد الإلكتروني</p>
                     <a
                       target="_blank"
                       href={`mailto:${email}`}
@@ -96,7 +96,7 @@ export default function ContactSection({
                     <MapPin className="w-6 h-6 text-main-color" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold mb-2">العنوان</h4>
+                    <p className="font-semibold mb-2">العنوان</p>
                     <p className="text-low-color text-sm leading-relaxed">
                       {address}
                     </p>

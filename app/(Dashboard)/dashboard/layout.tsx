@@ -16,12 +16,12 @@ export default async function Layout({
     redirect("/login");
   }
   return (
-    <div className="flex w-full">
+    <div className="flex w-full text-black">
       <SidebarProvider>
         <DashboardSidebar />
 
         <main className="flex flex-col w-full">
-          <div className="p-5 border-b flex items-center justify-between bg-second-bg text-black">
+          <div className="p-3 flex items-center justify-between bg-main-color text-white">
             <SidebarTrigger />
             <div className="flex items-center gap-6">
               <Link
@@ -33,7 +33,7 @@ export default async function Layout({
               <LogoutBtn />
             </div>
           </div>
-          <div className="p-5 bg-[#FCFBFC] min-h-[calc(100vh-4.4rem)]">
+          <div className="p-5 bg-[#FCFBFC] min-h-[calc(100vh-3.9rem)]">
             {children}
           </div>
         </main>
