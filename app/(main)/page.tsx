@@ -1,11 +1,9 @@
 // app/page.tsx
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
-import FloatedIcons from "@/components/FloatedIcons";
-import Footer from "@/components/Footer";
 import { GallerySection } from "@/components/GallerySection";
-import { Header } from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import HowWeWorkSection from "@/components/HowWeWorkSection";
 import PremiumPackagesSection from "@/components/PremiumPackagesSection";
 import RatingSection from "@/components/RatingSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -41,10 +39,10 @@ export default async function HomePage() {
 
   return (
     <div className="overflow-x-hidden">
-      <Header brandName={data.header.brandName} telephone={data.footer.phone} />
       <HeroSection {...data.hero} image={data.about.image} />
       <AboutSection {...data.about} features={data.whyUs.features} />
       <ServicesSection {...data.services} />
+      <HowWeWorkSection />
       <PremiumPackagesSection
         packages={data.packages ?? []}
         whatsapp={data.hero?.whatsApp ?? ""}
@@ -54,14 +52,9 @@ export default async function HomePage() {
         averageRating={data.rating?.averageRating ?? 0}
         totalRatings={data.rating?.totalRatings ?? 0}
       />
-      <FloatedIcons
-        whatsapp={data.hero?.whatsApp ?? ""}
-        telephone={data.footer.phone ?? ""}
-      />
 
       <GallerySection gallery={data.gallery} />
       <ContactSection {...data.footer} whatsapp={data.hero?.whatsApp ?? ""} />
-      <Footer {...data.footer} description={data.hero?.subheadline} />
     </div>
   );
 }

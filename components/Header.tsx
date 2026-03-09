@@ -4,13 +4,15 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { HeaderData } from "@/lib/responseType";
+import Link from "next/link";
 
 const navLinks = [
-  { href: "#home", label: "الرئيسية" },
-  { href: "#about", label: "من نحن" },
-  { href: "#services", label: "خدماتنا" },
-  { href: "#gallery", label: "معرض الصور" },
-  { href: "#contact", label: "تواصل معنا" },
+  { href: "/#home", label: "الرئيسية" },
+  { href: "/#about", label: "من نحن" },
+  { href: "/#services", label: "خدماتنا" },
+  { href: "/articles", label: "خدمات الضيافة" },
+  { href: "/#gallery", label: "معرض الصور" },
+  { href: "/#contact", label: "تواصل معنا" },
 ];
 
 export function Header({
@@ -24,8 +26,8 @@ export function Header({
       <div>
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a
-            href="#home"
+          <Link
+            href="/#home"
             className="flex items-center gap-3 md:text-2xl text-xl font-bold">
             {brandName.split(" ").length == 2 ? (
               <span className="text-black">
@@ -37,17 +39,17 @@ export function Header({
             ) : (
               <span className="text-white/80">{brandName}</span>
             )}
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="hover:text-[hsl(var(--primary))] transition-colors font-medium">
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -86,7 +88,7 @@ export function Header({
             className="lg:hidden bg-main-color/30 text-black rounded-2xl border-t border-white/40">
             <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => {
@@ -96,7 +98,7 @@ export function Header({
                   }}
                   className="text-[hsl(var(--foreground)/0.8)] hover:text-[hsl(var(--primary))] transition-colors font-medium text-lg py-2">
                   {link.label}
-                </a>
+                </Link>
               ))}
               <a
                 target="_blank"

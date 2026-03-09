@@ -13,10 +13,11 @@ export default function Footer({
 
   const footerLinks = {
     company: [
-      { name: "الرئيسية", href: "#home" },
-      { name: "عن الشركة", href: "#about" },
-      { name: "خدماتنا", href: "#services" },
-      { name: "اتصل بنا", href: "#contact" },
+      { name: "الرئيسية", href: "/#home" },
+      { name: "عن الشركة", href: "/#about" },
+      { href: "/articles", name: "خدمات الضيافة" },
+      { name: "خدماتنا", href: "/#services" },
+      { name: "اتصل بنا", href: "/#contact" },
     ],
   };
 
