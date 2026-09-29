@@ -12,7 +12,6 @@ const navLinks = [
   { href: "/#services", label: "خدماتنا" },
   { href: "/articles", label: "خدمات الضيافة" },
   { href: "/#gallery", label: "معرض الصور" },
-  { href: "/#contact", label: "تواصل معنا" },
 ];
 
 export function Header({
@@ -20,7 +19,6 @@ export function Header({
   telephone,
 }: HeaderData & { telephone?: string }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   return (
     <header className="md:container w-full rounded-2xl fixed bg-white px-3 shadow-sm top-1 left-1/2 -translate-x-1/2 z-50 duration-300 border-b border-black/10">
       <div>
@@ -28,7 +26,7 @@ export function Header({
           {/* Logo */}
           <Link
             href="/#home"
-            className="flex items-center gap-3 md:text-2xl text-xl font-bold">
+            className="flex items-center gap-3 md:text-2xl text-base font-bold">
             {brandName.split(" ").length == 2 ? (
               <span className="text-black">
                 {brandName.split(" ")[0]}{" "}
@@ -37,7 +35,7 @@ export function Header({
                 </span>
               </span>
             ) : (
-              <span className="text-white/80">{brandName}</span>
+              <span className="text-black/80">{brandName}</span>
             )}
           </Link>
 

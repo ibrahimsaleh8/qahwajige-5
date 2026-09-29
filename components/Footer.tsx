@@ -17,7 +17,6 @@ export default function Footer({
       { name: "عن الشركة", href: "/#about" },
       { href: "/articles", name: "خدمات الضيافة" },
       { name: "خدماتنا", href: "/#services" },
-      { name: "اتصل بنا", href: "/#contact" },
     ],
   };
 
@@ -26,7 +25,7 @@ export default function Footer({
       <div className="container mx-auto">
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <Link
@@ -50,39 +49,6 @@ export default function Footer({
                     </Link>
                   </li>
                 ))}
-              </ul>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h3 className="text-black font-bold text-lg mb-6">تواصل معنا</h3>
-              <ul className="space-y-4 text-black/80">
-                {address && (
-                  <li className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 mt-1" />
-                    <span>{address}</span>
-                  </li>
-                )}
-                {email && (
-                  <li className="flex items-start gap-3">
-                    <Mail className="w-5 h-5 mt-1" />
-                    <a
-                      href={`mailto:${email}`}
-                      className="hover:text-main-color transition-colors">
-                      {email}
-                    </a>
-                  </li>
-                )}
-                {phone && (
-                  <li className="flex items-start gap-3">
-                    <Phone className="w-5 h-5 mt-1" />
-                    <a
-                      href={`tel:${phone}`}
-                      className="hover:text-main-color transition-colors">
-                      {phone}
-                    </a>
-                  </li>
-                )}
               </ul>
             </div>
           </div>

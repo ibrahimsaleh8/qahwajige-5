@@ -4,15 +4,16 @@ import { Cairo } from "next/font/google";
 import "./globals.css";
 import { APP_URL, CurrentProjectId } from "@/lib/ProjectId";
 import { StructuredData } from "@/components/StructuredData";
-import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import { fetchMetaData } from "@/lib/FetchMetaData";
+import { Analytics } from "@vercel/analytics/next";
 
 const cairoFont = Cairo({
   weight: ["1000", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["arabic"],
 });
 
-type MetaDataResponseDataType = {
+export type MetaDataResponseDataType = {
   title: string;
   description: string;
   keywords: string[];
@@ -21,15 +22,7 @@ type MetaDataResponseDataType = {
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
-    const res = await fetch(
-      `${APP_URL}/api/project/${CurrentProjectId}/metadata`,
-      {
-        next: {
-          tags: ["metadata"],
-        },
-      },
-    );
-    const data: MetaDataResponseDataType = await res.json();
+    const data = await fetchMetaData();
 
     const title = data.title || data.brandName || "قهوجيين الرياض";
     const description = data.description || "خدمات الضيافة العربية في الرياض";
@@ -66,7 +59,7 @@ export async function generateMetadata(): Promise<Metadata> {
         },
       },
       alternates: {
-        canonical: process.env.NEXT_PUBLIC_APP_URL,
+        canonical: process.env.NEXT_PUBLIC_CURRENT_URL as string,
       },
       verification: {
         google: "FkuNt-eyWcE9HsxcriVtoz73oUhczWS8cYrZtUhHAzA",
@@ -97,12 +90,13 @@ export default async function RootLayout({
         <StructuredData
           name={data.brandName || "قهوجيين الرياض"}
           description={data.description || "خدمات الضيافة العربية في الرياض"}
-          url={process.env.NEXT_PUBLIC_APP_URL as string}
+          url={process.env.NEXT_PUBLIC_CURRENT_URL as string}
         />
       </head>
       <body className={`${cairoFont.className} antialiased`}>
         {children}
         <Analytics />
+
         <Script id="clixtell-tracking" strategy="afterInteractive">
           {`
             var script = document.createElement('script');

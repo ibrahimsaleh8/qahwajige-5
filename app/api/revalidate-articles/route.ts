@@ -5,6 +5,8 @@ export async function GET() {
   try {
     revalidatePath("/(main)/articles", "page");
     revalidatePath("/(main)/[title]", "page");
+    revalidatePath("/(main)/", "page");
+
     revalidatePath("/sitemap.xml");
     return NextResponse.json({ message: "Revalidation done" });
   } catch (error) {
